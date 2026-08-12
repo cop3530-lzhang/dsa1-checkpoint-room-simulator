@@ -1,0 +1,44 @@
+{
+	"tests": [
+	{
+		"name": "test seat",
+			"setup": "",
+			"run": "make clean test-seat",
+			"input": "",
+			"output": "All tests passed",
+			"comparison": "included",
+			"timeout": 10,
+			"points": 10
+	},
+	{
+		"name": "test room1",
+		"setup": "",
+		"run": "make clean test-room1",
+		"input": "",
+		"output": "All tests passed",
+		"comparison": "included",
+		"timeout": 10,
+		"points": 20
+	},
+	{
+		"name": "test room2",
+		"setup": "",
+		"run": "make clean test-room2",
+		"input": "",
+		"output": "All tests passed",
+		"comparison": "included",
+		"timeout": 10,
+		"points": 10
+	},
+	{
+		"name": "Memory leak check",
+		"setup": "(valgrind --version || (sudo apt-get update -y && sudo apt-get install -y valgrind)) && make test-room2",
+		"run": "valgrind --leak-check=full --error-exitcode=1 ./test-room2",
+		"input": "",
+		"output": "",
+		"comparison": "included",
+		"timeout": 10,
+		"points": 10
+	}
+	]
+}
