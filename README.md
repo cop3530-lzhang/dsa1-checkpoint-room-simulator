@@ -123,8 +123,21 @@ Your application must function as described below:
 1. Your program must compile and pass tests.
    - All tests must pass by running together with `make test-all`. You can run
      individual test during development.
-1. You classes must be memory leak free. Memory leakage will be checked and
+1. Your classes must be memory leak free. Memory leakage will be checked and
    graded in autograding.
+
+## Building and Testing
+
+A `Makefile` is provided to automate compilation and testing:
+- **Run all unit tests**: `make test-all`
+- **Run individual unit tests**:
+  - `make test-seat`: Runs Seat class unit tests.
+  - `make test-room1`: Runs Room class unit tests part 1.
+  - `make test-room2`: Runs Room class unit tests part 2.
+- **Run memory leak check**: `make test-mem` (runs Valgrind on the room2 test executable).
+- **Clean build artifacts**: `make clean`
+
+> **Note for macOS / Xcode users**: Valgrind is not natively supported on macOS. If you are using macOS command line tools (Xcode), you cannot directly execute `valgrind` / `make test-mem` locally. Please launch a **GitHub Codespaces** instance on GitHub (or use a Linux container) to run memory leak checks.
 
 ## Important Notes:
 - Projects will be graded on whether they correctly solve the problem, and
